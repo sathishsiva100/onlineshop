@@ -68,7 +68,6 @@ window.menu ='${title}';
    <!-- Load only when user click help-->
    <c:if test="${userClickhelp == true }">
     <%@include file="help.jsp" %>
-   
    </c:if>
 
     <!-- footer comes here -->

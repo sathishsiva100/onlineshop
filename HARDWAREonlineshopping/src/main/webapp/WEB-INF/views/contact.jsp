@@ -5,7 +5,7 @@
 		contact us
 		</h1>
 			<hr />
-			<p>This is an contactus page</p>
+			<p>This is an contact us page</p>
 </div>
 
 </div>
