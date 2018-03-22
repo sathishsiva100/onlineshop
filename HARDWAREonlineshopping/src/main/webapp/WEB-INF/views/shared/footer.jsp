@@ -1,7 +1,14 @@
-<!-- Footer -->
-    <footer class="py-5 bg-dark"> 
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
-      </div>
-     
-    </footer>
+<div class="container">
+
+        <hr>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Company 2013 - Template by <a href="http://maxoffsky.com/">Maks</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
