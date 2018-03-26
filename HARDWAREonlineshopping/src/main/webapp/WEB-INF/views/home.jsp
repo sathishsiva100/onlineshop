@@ -1,6 +1,4 @@
-    <div class="container">
-
-        <div class="row">
+<div class="row">
 
             <div class="col-md-3">
                 <%@include file="./shared/sidebar.jsp" %>
@@ -11,7 +9,7 @@
                 <div class="row carousel-holder">
 
                     <div class="col-md-12">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel-example-generic">
                             <ol class="carousel-indicators">
                                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>

@@ -19,7 +19,12 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <title>HARDWARE Shopping -${title}</title>
+
 <script>
 	window.menu = $
 	{
@@ -45,9 +50,9 @@
 		<%@include file="./shared/navbar.jsp"%>
 
 		<!-- Page Content -->
-		
+
 		<div class="content">
-		
+
 			<!-- Loading the home content -->
 			<c:if test="${userClickHome==true }">
 				<%@include file="home.jsp"%>
@@ -62,6 +67,14 @@
 			<c:if test="${userClickContact==true }">
 				<%@include file="contact.jsp"%>
 			</c:if>
+			<!-- Loading only when user click contact -->
+			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+				<%@include file="listProducts.jsp"%>
+			</c:if>
+ 
+
+
+
 		</div>
 
 		<!--footer comes here-->
