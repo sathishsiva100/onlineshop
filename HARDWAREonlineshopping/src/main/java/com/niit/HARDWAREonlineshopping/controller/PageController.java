@@ -50,7 +50,7 @@ public class PageController {
 		return mv;
 	}
 
-	@RequestMapping(value= {"/view prodect"})
+	@RequestMapping(value= {"/viewproduct"})
 public ModelAndView viewprodect() {
 	
 	ModelAndView mv=new ModelAndView("page");
