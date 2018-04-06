@@ -45,7 +45,7 @@ public class PageController {
 	public ModelAndView Help() {
 
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "contact");
+		mv.addObject("title", "contact Us");
 		mv.addObject("userClickContact", true);
 		return mv;
 	}
@@ -55,7 +55,7 @@ public ModelAndView viewprodect() {
 	
 	ModelAndView mv=new ModelAndView("page");
 	mv.addObject("title","view");
-	mv.addObject("userClickview",true);
+	mv.addObject("userClickView",true);
 	return mv;
 }
 	
