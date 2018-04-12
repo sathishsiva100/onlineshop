@@ -26,10 +26,7 @@
 <title>HARDWARE Shopping -${title}</title>
 
 <script>
-	window.menu = $
-	{
-		title
-	}
+	window.menu = '${title}';
 </script>
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.css" rel="stylesheet">
@@ -69,7 +66,7 @@
 			</c:if>
 			<!-- Loading only when user click contact -->
 			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
-				<%@include file="listProducts.jsp"%>
+				<%@include file="listProducts.jsp"%> 
 			</c:if>
  
 
@@ -81,11 +78,14 @@
 		<%@include file="./shared/footer.jsp"%>
 
 		<!-- JQuery-->
-		<script src="${js}/jquery-1.10.2.js"></script>
+		<script src="${js}/jquery.js"></script>
 
 		<!-- Bootstrap Core javaScript -->
 		<script src="${js}/bootstrap.js"></script>
-
+		
+		<!-- DataTable Plugin -->
+        <script src="${js}/jquery.dataTables.js"></script>
+        
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>
 	</div>
