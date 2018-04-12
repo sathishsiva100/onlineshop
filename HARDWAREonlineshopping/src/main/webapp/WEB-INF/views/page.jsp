@@ -85,6 +85,8 @@
 		
 		<!-- DataTable Plugin -->
         <script src="${js}/jquery.dataTables.js"></script>
+        <!-- DataTable Plugin -->
+        <script src="${js}/jqueryui.dataTables.js"></script>
         
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>
