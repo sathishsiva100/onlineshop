@@ -24,28 +24,108 @@ $(function() {
 	}
 
 	// code for jquery dataTable
-	// create a dataset
-	var products = [
+	var jsonUrl = '';
+	if (window.categoryId == '') {
 
-	[ '1', 'ABC' ], 
-	[ '2', 'NMF' ],
-	[ '3', 'FDD' ], 
-	[ '4', 'DFC' ],
-    [ '5', 'FDA' ],
-    [ '6', 'FDS' ],
-    [ '7', 'DEF' ], 
-    [ '8', 'VFG' ]
+		jsonUrl = window.contextRoot + '/json/data/all/products';
+	} else {
+		jsonUrl = window.contextRoot + '/json/data/category/'
+				+ window.categoryId + ' /products';
 
-	];
+	}
 
 	var $table = $('#productListTable');
 	// execute the below code only where we have this table
 	if ($table.length) {
-		//console.log('Inside the table');
-	$table.DataTable({
-		data: products
-	});	
-	
+		// console.log('Inside the table');
+		$table
+				.DataTable({
+					lengthMenu : [
+							[ 3, 5, 10, -1 ],
+							[ ' 3 Records', ' 5 Records', ' 10 Records', ' ALL' ] ],
+					pageLength : 5,
+					ajax : {
+						url : jsonUrl,
+						dataSrc : ''
+					},
+					columns : [
+
+							{
+								data : 'code',
+								mrender : function(data, type, row) {
+									return '<img src="' + window.contextRoot
+											+ '/resources/images/' + data
+											+ '.jpg" class="dataTableImg"/>';
+								}
+							},
+
+							{
+
+								data : 'name'
+							},
+							{
+
+								data : 'brand'
+							},
+							{
+
+								data : 'unitPrice',
+
+								mRender : function(data, type, row) {
+
+									return '&#8377; ' + data
+								}
+
+							},
+							{
+
+								data : 'quantity',
+								mRender: function(data,type, row){
+									
+									if(data <1){
+										return '<span style ="color:red">Out if Stock!</span>';
+									}
+									return data;
+									
+								}
+							},
+							{
+								data : 'id',
+								bSortable : false,
+								mRender : function(data, type, row) {
+
+									var str = '';
+									str += '<a href="'
+										+ window.contextRoot
+											+ '/show/'
+											+ data
+											+ '/product"class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></a>&#160';
+									
+									if(row.quantity < 1){
+										
+										str +=str += '<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-hardware-cart"></a>';
+
+									}
+									}
+									else{
+										str += '<a href="'+ window.contextRoot+ '/cart/add/'+ data + '/product" class="btn btn-success"><span class="glyphicon glyphicon-hardware-cart"></a>';
+									
+										
+										
+									}
+									
+									str += '<a href="'+ window.contextRoot + '/cart/add/'+ data + '/product" class="btn btn-success"><span class="glyphicon glyphicon-hardware-cart"></a>';
+
+											
+											
+											
+									return str;
+								}
+							}
+
+					]
+				});
+
 	}
 
 });
