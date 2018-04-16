@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.niit.HARDWARESbackend.dao.CategoryDAO;
-import com.niit.HARDWARESbackend.dao.ProductDAO;
-import com.niit.HARDWARESbackend.dto.Category;
-import com.niit.HARDWARESbackend.dto.Product;
+import com.niit.HARDWAREbackend.config.ProductDAO;
+import com.niit.HARDWAREbackend.dao.CategoryDAO;
+import com.niit.HARDWAREbackend.dto.Category;
+import com.niit.HARDWAREbackend.dto.Product;
 import com.niit.HARDWAREonlineshopping.exception.ProductNotFoundException;
 
 @Controller
@@ -149,7 +149,7 @@ category =categoryDAO.get(id);
 		mv.addObject("title", product.getName());
 		mv.addObject("product", product);
 		
-		mv.addObject("userClickShowProduct",true);
+		mv.addObject("UserClickShowProduct",true);
 				
 				return mv;
 	}

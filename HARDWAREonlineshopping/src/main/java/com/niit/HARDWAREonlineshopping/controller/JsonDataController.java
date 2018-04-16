@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.niit.HARDWARESbackend.dao.ProductDAO;
-import com.niit.HARDWARESbackend.dto.Product;
+import com.niit.HARDWAREbackend.config.ProductDAO;
+import com.niit.HARDWAREbackend.dto.Product;
 
 @Controller
 @RequestMapping("/json/data")
